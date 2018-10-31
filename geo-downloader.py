@@ -1,4 +1,4 @@
-""" Download GEO Data Set Accroding to ID(s) | GEO Dowloader | 2018-10-24 Hwx """
+""" Download GEO Data Set Accroding to GSE ID(s) | GEO Dowloader | 2018-10-24 Hwx """
 
 
 import os
@@ -6,12 +6,14 @@ import sys
 import time
 import argparse
 import importlib
+
 import subprocess as sp
 import multiprocessing as mp
 
+
 # Default Configures
 config = {
-    "core" : 8,
+    "core" : 4,
     "base_url" : "https://www.ncbi.nlm.nih.gov/geo/download/?acc="
 }
 
