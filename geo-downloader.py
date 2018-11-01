@@ -42,7 +42,7 @@ for mdl in module_list:
         except Exception as e:
             sys.exit("\n**** Error: %s \n> Please Install This Package Manually.\n" % e)
 
-# For the Temperary
+# For the Temporary
 import urllib
 import bs4
 import wget
