@@ -84,12 +84,11 @@ print("RNA Sequence:", RNA_Sequence)
 
 # Length of Nucleotide Sequence
 RNA_Length = len(RNA_Sequence)
-# codon_number = RNA_Length // 3
 
 if RNA_Length % 3 == 0:
     print("Numbers of Codon in RNA Sequence:", RNA_Length // 3)
 else:
-    print("Numbers of Codon in RNA Sequence:", RNA_Length)
+    print("Numbers of Codon in RNA Sequence Is Not Divisible by 3, Remainder is:", RNA_Length % 3)
 
 
 # Convert RNA -> Amino Acid (AA)
