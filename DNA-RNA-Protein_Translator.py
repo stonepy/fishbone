@@ -1,7 +1,7 @@
 """ DNA-RNA-AAs Translation | 2018-11-11 Hwx """
 
 # Input Your Target DNA Sequnce Here
-Sequence = """GCTTATCTCTCTTGGCCCACCATTACGCAAATGGTGGTAGGTAGGTGAAGAACGGTGAGA"""
+Sequence = """ATGACATCGTTTGGGCTTATCTCTCTTGGCCCACCATTACGCAAATGGTGGTAG"""
 
 
 DNA = ["A", "T", "G", "C"]
@@ -34,30 +34,12 @@ Codon_Table = {
 
 Notation_Table = {
 
-    "Ala": "A",
-    "Arg": "R",
-    "Asn": "N",
-    "Asp": "D",
-    "Cys": "C",
-    "Gln": "Q",
-    "Glu": "E",
-    "Gly": "G",
-    "His": "H",
-    "Ile": "I",
+    "Ala": "A", "Arg": "R", "Asn": "N", "Asp": "D", "Cys": "C",
+    "Gln": "Q", "Glu": "E", "Gly": "G", "His": "H", "Ile": "I",
+    "Leu": "L", "Lys": "K", "Met": "M", "Phe": "F", "Pro": "P",
+    "Ser": "S", "Thr": "T", "Trp": "W", "Tyr": "Y", "Val": "V",
 
-    "Leu": "L",
-    "Lys": "K",
-    "Met": "M",
-    "Phe": "F",
-    "Pro": "P",
-    "Ser": "S",
-    "Thr": "T",
-    "Trp": "W",
-    "Tyr": "Y",
-    "Val": "V",
-
-    "START=>" : "[S=>]",
-    "<=STOP"  : "[<=S]",
+    "START=>" : "[S=>]", "<=STOP"  : "[<=S]",
 
 }
 
@@ -147,5 +129,34 @@ codon_table = {
 
     "Start" : ["AUG"],
     "Stop"  : ["UAA", "UGA", "UAG"]
+
+}
+
+Notation_Table = {
+
+    "Ala": "A",
+    "Arg": "R",
+    "Asn": "N",
+    "Asp": "D",
+    "Cys": "C",
+    "Gln": "Q",
+    "Glu": "E",
+    "Gly": "G",
+    "His": "H",
+    "Ile": "I",
+
+    "Leu": "L",
+    "Lys": "K",
+    "Met": "M",
+    "Phe": "F",
+    "Pro": "P",
+    "Ser": "S",
+    "Thr": "T",
+    "Trp": "W",
+    "Tyr": "Y",
+    "Val": "V",
+
+    "START=>" : "[S=>]",
+    "<=STOP"  : "[<=S]",
 
 }
