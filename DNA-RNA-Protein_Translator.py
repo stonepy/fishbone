@@ -95,7 +95,7 @@ for position in range(0, RNA_Length, 3):
         Notation = Notation_Table[AA]
         AA_Notation_Sequnce += Notation
     else:
-        AA_Sequence += "X" + " "
+        AA_Notation_Sequnce += "X" + " "
         print("There Is A Codon In RNA Sequnce Can Not Be Recognised:", short_seq, position, position + len(short_seq))
 print("Notation Of Amino Acid Sequence: ", AA_Notation_Sequnce)
 
