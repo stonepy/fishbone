@@ -1,5 +1,4 @@
 import time
-
 import random
 
 
@@ -12,10 +11,10 @@ class environment:
 
 
 class cell_type_0:
-    """ Define Cell Type 1 Attributes """
+    """ Define Cell Type 0 Attributes """
 
     def __init__(self):
-        self.symbol = "*"
+        self.symbol = "H"
         self.divide_rate = 1  # Max is 1, Min is 0. RATE = Divide Once / Refresh Times
         self.priority = 1  # Max is 10, Min is 0.
         self.invasive = 0  # Max is 10, Min is 0.
@@ -35,6 +34,7 @@ class cell_type_0:
         }
 
         self.tranform = [
+
             "type_1",
             "type_2",
             "type_3",
@@ -43,7 +43,81 @@ class cell_type_0:
             "type_6",
             "type_7",
             "type_8",
+
         ]
+
+
+class cell_type_1:
+    """ Define Cell Type 1 Attributes """
+
+    def __init__(self):
+        self.symbol = "K"
+        self.divide_rate = 1  # Max is 1, Min is 0. RATE = Divide Once / Refresh Times
+        self.priority = 1  # Max is 10, Min is 0.
+        self.invasive = 0  # Max is 10, Min is 0.
+
+        self.divide_direction = {
+
+            "left_1": [0.0000, 0.0625],
+            "top-left": [0.0625, 0.1875],
+            "top": [0.1875, 0.3125],
+            "top-right": [0.3125, 0.4375],
+            "right": [0.4375, 0.5625],
+            "bottom-right": [0.5625, 0.6875],
+            "bottom": [0.6875, 0.8125],
+            "bottom-left": [0.8125, 0.9375],
+            "left_2": [0.9375, 1.0000],
+
+        }
+
+        self.tranform = [
+
+            "type_2",
+            "type_3",
+            "type_4",
+            "type_5",
+            "type_6",
+            "type_7",
+            "type_8",
+
+        ]
+
+
+class cell_type_2:
+    """ Define Cell Type 1 Attributes """
+
+    def __init__(self):
+        self.symbol = "T"
+        self.divide_rate = 1  # Max is 1, Min is 0. RATE = Divide Once / Refresh Times
+        self.priority = 1  # Max is 10, Min is 0.
+        self.invasive = 0  # Max is 10, Min is 0.
+
+        self.divide_direction = {
+
+            "left_1": [0.0000, 0.0625],
+            "top-left": [0.0625, 0.1875],
+            "top": [0.1875, 0.3125],
+            "top-right": [0.3125, 0.4375],
+            "right": [0.4375, 0.5625],
+            "bottom-right": [0.5625, 0.6875],
+            "bottom": [0.6875, 0.8125],
+            "bottom-left": [0.8125, 0.9375],
+            "left_2": [0.9375, 1.0000],
+
+        }
+
+        self.tranform = [
+
+            "type_3",
+            "type_4",
+            "type_5",
+            "type_6",
+            "type_7",
+            "type_8",
+
+        ]
+
+
 
 
 
@@ -128,8 +202,16 @@ def update(plate, cell_all, cell_set):
             direction  = divide_direction_decide(cell.divide_direction)
             divide_pos = divide([h, w], direction)
 
+
+
+
+
             if divide_pos not in plate_cell_pos:
                 cell_all[symbol].append(divide_pos)
+
+
+
+
 
     return cell_all
 
@@ -142,23 +224,17 @@ def main():
     width, height = 50, 30  # Point
     start_cells = {
 
-        "*": [[24, 7]],
-        "#": [],
-        "%": [],
-        "&": [],
-        "@": [],
-        "%": [],
+        "O": [[20, 15]],
+        "K": [[10, 3]],
+        "T": [[36, 4]],
 
     }
 
     cell_set = {
 
-        "*": cell_type_0(),
-        "#": None,
-        "%": None,
-        "&": None,
-        "@": None,
-        "%": None,
+        "O": cell_type_0(),
+        "K": cell_type_1(),
+        "T": cell_type_2(),
 
     }
 
@@ -183,7 +259,19 @@ def main():
             print(" ".join(row))
         print("\n")
 
+        # Stop The Game, When Plate Is Full
+        all_symbols = []
+        for row in plate:
+            for symbol in row:
+                all_symbols.append(symbol)
+
+        if "." not in all_symbols:
+            break
+
+
         time.sleep(refresh_interval)
+
+
 
 
 main()
